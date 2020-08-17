@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 
 {% block converted_img %}
-<div>
-    <form action="/download">
-        <p>Convertido com sucesso!!!</p>
-        <p>Faça download do seu arquivo aqui.</p>
-
-        <button class="btn"><i class="fa fa-donwload"></i> Download</button>
+    <form action="/download" class="form-signin">
+        
+        <h2 class="alert alert-success" role="alert">Convertido com sucesso!!!</h2>
+        <p>Faça download do seu QR Code aqui.</p>
+        <button class="btn btn-success btn-block btn-lg">Download</button>
 
     </form>
-</div>
 {% endblock %}

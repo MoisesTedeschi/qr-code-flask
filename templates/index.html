@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 
 {% block qrcode_generator_form %}
-<div>
-<h1>QR Code Generator</h1>
-
-<form action="">
-    <input type="text" name="test" placeholder="Informe a URL da campanha..." required="">
-
-    <button type="submit" class="btn btn-primary btn-block btn-large"> Gerar QR Code</button>
-
-</form>
-</div>
+    <h1>QR Code Generator</h1>
+    <p>Insira sua URL</p>
+    <form action="/converted" method="post" class="form-signin">
+        <input class="form-control form-control-lg mt-3" type="text" name="valor_entrada" 
+        placeholder="http://" required="">
+        <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">Gerar QR Code</button>
+    </form>
 {% endblock %}
     
