@@ -1,7 +1,6 @@
-from flask.globals import session
 from qr import qrcode_genetator
 from flask import Flask, render_template, send_file, request
-
+from pyqrcode import QRCode
 
 app = Flask(__name__)
 
@@ -12,14 +11,15 @@ def home():
 
 
 @app.route('/converted', methods = ['GET', 'POST'])
-def convert():
+def converted():
     global info_input
 
     if request.method == "POST":
-        info_input = f"{request.form.get('valor_entrada')}"
+        info_input = request.form['valor_entrada']
+        print(info_input)
         return render_template('converted.html')
-    
-    return render_template('converted.html')
+
+    return render_template('index.html')
 
 @app.route('/download')
 def download():
